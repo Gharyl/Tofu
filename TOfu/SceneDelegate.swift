@@ -10,13 +10,39 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
-
-
+  var coordinator: MainCoordinator?
+  var firebase: FirebaseCommunicator?
+  
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    guard let _ = (scene as? UIWindowScene) else { return }
+    guard let windowScene = (scene as? UIWindowScene) else { return }
+    
+    let navigation = UINavigationController()
+    firebase = FirebaseCommunicator()
+    coordinator = MainCoordinator(navigation, firebase!)
+    coordinator?.setup()
+    
+    navigation.delegate = coordinator
+
+    navigation.view.backgroundColor = .white
+
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground() // Makes navigationbar opague to draw shadow
+    navigation.navigationBar.standardAppearance = appearance
+    navigation.navigationBar.scrollEdgeAppearance = appearance
+    navigation.navigationBar.layer.shadowOffset = CGSize(width: 10, height: -5)
+    navigation.navigationBar.layer.shadowRadius = 5
+    navigation.navigationBar.layer.masksToBounds = false
+    navigation.navigationBar.layer.shadowOpacity = 1
+    navigation.navigationBar.layer.shadowColor =  K.colorTheme2.gray2.cgColor
+    
+
+    window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+    window?.windowScene = windowScene
+    window?.rootViewController = navigation
+    window?.makeKeyAndVisible()
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {
