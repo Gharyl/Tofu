@@ -8,7 +8,7 @@ There are more screenshots and short gifs below.
 * [Architecture](#architecture)
 * [Challenges](#challenges)
 * [Road Ahead](#road-ahead)
-* [Showcase](#showcase)
+* [Showcase:sparkles:](#showcase)
 * [Resources]($resources)
 
 
@@ -23,11 +23,43 @@ Fastforward to 2022 January, I decided to revisit Swift and self-teach using var
 - I am following MVVM design pattern with Coordinator pattern (coined and introduced by Soroush Khanlou)
 - Delegate pattern (protocol oriented programming)
 
+Here's a quick flowchart illustrating the flow of this app. Each ViewController has its own Coordinator, which acts as a middleman between retrieving/updating/deleting data from Firebase. Each Coordinator class also controls pushing/popping ViewControllers using delegates. 
+
+>Side Note: Did not realize I could create charts using Markdown! This has been a pleasant discovery.
+
+
+```mermaid
+graph TB
+A[SceneDelegate] --> B[MainCoordiantor]
+A --> AA[FirebaseCommunicator]
+ 
+AA---B
+AA---D
+AA---H
+AA---J
+
+B ------> C{{WelcomeViewController}}
+B -.->|Child| D[HomeVCCoordiantor]
+D ---> E{{HomeViewController 'ContainerView'}}
+E ---> F{{ChatViewController}}
+E ---> G{{ProfileViewController}}
+E ---> L{{NewMessageViewController}}
+E ---> LL{{ChatListViewController}}
+D -..-> |Child| H[FriendVCCoordinator]
+H ---> I{{FriendListControllder}}
+H -.-> |Child| J[NewFriendVCCoordinator]
+J --> K{{NewFriendViewController}}
+```
+
+
+
 # Challenges
 
 - UIViewController's lifecycle methods are much more than just 'viewDidLoad()'. In my case, these methods are extremely useful when attaching/detaching observer/listener and doing cleanup when a UIViewController is about to go off/on the screen.
 - Closures/callbacks! These methods took me a while to fully understand, especially when used in an asynchorous context. 
+
     > *"What do you mean sometime in the future this closure is going to be triggered?"*
+
 - Animation is a lot harder than SwiftUI.
 - Constraints! So powerful, yet so tedious.
 - Delegate pattern.
@@ -39,10 +71,10 @@ Fastforward to 2022 January, I decided to revisit Swift and self-teach using var
 
 # Road Ahead
 
-There are still many things within Apple's ecosystem that I still need to learn. Howeevr after this proejct, I am definitely going to start to explore CoreData, SwiftUI and CloudKit, so that all Apple's products will be synchronized.
+There are still many things within Apple's ecosystem that I still need to learn. However after this proejct, I am definitely going to start with CoreData, SwiftUI and CloudKit.
 
 # Showcase
-
+![](http://i.imgur.com/60bts.gif)
 
 
 # Resources
@@ -52,5 +84,5 @@ There are still many things within Apple's ecosystem that I still need to learn.
 * Many YouTube videos
 * Many StackOverflow posts
 * A little bit of Reddit
-* A tiny bit of Quora <sup>*(I was desperate okay?)*</sup>
+* A tiny bit of Quora <sup>*(Desperate times calls for desperate measures..)*</sup>
 
