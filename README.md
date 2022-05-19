@@ -74,7 +74,7 @@ J --> K{{NewFriendViewController}}
 There are still many things within Apple's ecosystem that I still need to learn. However after this proejct, I am definitely going to start with CoreData, SwiftUI and CloudKit.
 
 # Showcase
-![](http://i.imgur.com/60bts.gif)
+![](https://gfycat.com/shockedblaringarmyworm.gif)
 
 
 # Resources
