@@ -99,9 +99,9 @@ I use UISearchTextField and UISearchToken that Apple finally exposed to UIKit in
 
 Inspired by iMessage's message reaction, I decided it would be an interesting challenge to mimic the functionality. When the user long presses a message, this begins the transition to the next UIViewController. 
 
-First, I use CoreGraphics to take a screenshot of the entire phone screen, including the NavigationBar, which is ommited when simply using 'snapShotView(afterScreenUpdates: Bool)'. After receiving the screenshot, I use CoreImage's gaussian blur filter so I can have a UIImage with blur effect without UIVisualEffectView overlay. This effect is done in a fraction of a second thanks to CoreGraphics. The final blurred UIimage is used as the background of the next UIViewController.
+First, I use CoreGraphics to take a screenshot of the entire phone screen, including the NavigationBar, which is ommited when simply using 'snapShotView(afterScreenUpdates: Bool)'. After receiving the screenshot, I use CoreImage's gaussian blur filter so I can have a UIImage with blur effect without UIVisualEffectView overlay. CIFilter also lets us specifies the blur radius, unlike UIVisualEffect which I find too blurry to use in this case.
 
-Next, I calculate the point at which the Reaction Menu expands. This point varies for each message. I calculate this point again when the user taps on a reaction.
+This effect is done in a fraction of a second thanks to CoreGraphics. The final blurred UIimage is used as the background of the next UIViewController. Next, I calculate the point at which the Reaction Menu expands. This point varies for each message. I calculate this point again when the user taps on a reaction.
 
 ![](https://media.giphy.com/media/LrUylkZxGbWvTqMC2Y/giphy.gif)
 ![](https://media.giphy.com/media/jYtWZ4S8qmTmLQZWAp/giphy.gif)
@@ -130,7 +130,7 @@ Next, I calculate the point at which the Reaction Menu expands. This point varie
 # Road Ahead
 
 Things I want to improve or add:
-* Migrate from UITableView to UICollectionView for better animation controll
+* Migrate from UITableView to UICollectionView for better animation control
 * Implement a better cache to enhance performance
 * Allow sending more data types other than text
   - Photo
