@@ -92,6 +92,7 @@ Next, I calculate the point at which the Reaction Menu expands. This point varie
 
 ![](https://media.giphy.com/media/LrUylkZxGbWvTqMC2Y/giphy.gif)
 ![](https://media.giphy.com/media/jYtWZ4S8qmTmLQZWAp/giphy.gif)
+![](https://media.giphy.com/media/Ddtd67NP8nNJIa2q1x/giphy.gif)
 
 ***
 
