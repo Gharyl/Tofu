@@ -1,7 +1,7 @@
 # Tofu
-A simple messaging app made in Swift backed by Firebase! This is my first Swift project that represents the extent of what I have learned in the span of 4 months.
+A simple messaging app made in Swift backed by Firebase! This is my first Swift project that represents the extent of what I have learned from Feb 2022 ~ May 2022.
 
-There are more screenshots and short gifs below.
+***
 
 # Contents
 * [Motivation](#motivation)
@@ -11,11 +11,14 @@ There are more screenshots and short gifs below.
 * [Road Ahead](#road-ahead)
 * [Resources]($resources)
 
+***
 
 # Motivation
 
 I decided to make a messaging application as my first Swift project because it is simple enough to tackle, yet complex enough as a challenge to learn about Apple's Swift language, specifically the UIKit framework (for now). Actually, my interest was initially devoted to SwiftUI back in 2019 before I realzied that SwiftUI was not mature enough to create a reliable application at the time. So I moved on and focused on my academics.
 Fastforward to 2022 January, I decided to revisit Swift and self-teach using various online resources.
+
+***
 
 # Architecture
 
@@ -112,7 +115,25 @@ Next, I calculate the point at which the Reaction Menu expands. This point varie
 
 # Road Ahead
 
-There are still many things within Apple's ecosystem that I still need to learn. However after this proejct, I am definitely going to start with CoreData, SwiftUI and CloudKit.
+Things I want to improve or add:
+* Migrate from UITableView to UICollectionView for better animation controll
+* Implement a better cache to enhance performance
+* Allow sending more data types other than text
+  - Photo
+  - Video
+  - Link preview 
+* Add notification
+* Allow user to change color, font, font size, notification settings
+
+***
+
+# Closing
+
+I had a lot of fun learning Swift. Coming from C++ and other older languages, I find Swift very elegant and easy on the eyes; errors are more than easy to identify and locate (so far anyway. I am jinxing myself aren't I?). I would say that I spend about 50% of the time on architecture of my app and 50% on the animations. I have rewritten my app several times during this time as I discover more design patterns or cool ways to animate. I still struggle to keep my code as clean and easy to read as possible, especially when I incorporate more and more animations or functionalities. 
+
+>*This app will not be published to the AppStore and is only for my own personal learning purposes.*
+
+SwiftUI, CoreData, CloudKit, and CoreML are on the list of things I want to do next!
 
 ***
 
@@ -123,5 +144,5 @@ There are still many things within Apple's ecosystem that I still need to learn.
 * Many YouTube videos
 * Many StackOverflow posts
 * A little bit of Reddit
-* A tiny bit of Quora <sup>*(Desperate times calls for desperate measures..)*</sup>
+* A tiny bit of Quora <sup>*(Desperate times call for desperate measures..)*</sup>
 
