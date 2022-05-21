@@ -33,7 +33,7 @@ Here's a quick flowchart illustrating the flow of this app. Each ViewController 
 
 ```mermaid
 graph TB
-A[SceneDelegate] --> B[MainCoordiantor]
+A[AppDelegate] --> B[MainCoordiantor]
 A --> AA[FirebaseCommunicator]
  
 AA---B
@@ -41,18 +41,25 @@ AA---D
 AA---H
 AA---J
 
-B ------> C{{WelcomeViewController}}
+B ----> C{{WelcomeViewController}}
+C ---> CC{{SignInViewController}}
+C ---> CCC{{SignUpViewController}}
 B -.->|Child| D[HomeVCCoordiantor]
 D ---> E{{HomeViewController 'ContainerView'}}
-E ---> F{{ChatViewController}}
 E ---> G{{ProfileViewController}}
 E ---> L{{NewMessageViewController}}
+E ---> EE{{FriendViewController}}
 E ---> LL{{ChatListViewController}}
+D -..-> |Child| AB[ChatVCCoordinator]
+AB ---> BC{{ChatViewController}}
+AB -.-> |Child| BA[MessageReactionVCCOordiantor]
+BA --> BAA{{MessageReactionViewController}}
 D -..-> |Child| H[FriendVCCoordinator]
 H ---> I{{FriendListControllder}}
 H -.-> |Child| J[NewFriendVCCoordinator]
 J --> K{{NewFriendViewController}}
 ```
+
 
 ***
 
@@ -81,6 +88,12 @@ The main screen of this app shows a HomeViewController, which has two child UIVi
 The user can search for other users in Cloud Firestore to send a friend request. I decided to mimic Material Design's button feel when the user send a request.
 
 ![](https://media.giphy.com/media/EJ3lM2Y5oDyy4C4CQw/giphy.gif)
+
+***
+
+I use UISearchTextField and UISearchToken that Apple finally exposed to UIKit in iOS13. When the user taps on a UITableCell, it creates a UISearchToken and add it to UISearchTextField (like iMessage). I also access these UISearchTokens to create a 'Chat' object and push it to Cloud Firestore.
+
+![](https://media.giphy.com/media/YgQu2ZG9KMavtFrGiN/giphy.gif)
 
 ***
 
@@ -125,6 +138,8 @@ Things I want to improve or add:
   - Link preview 
 * Add notification
 * Allow user to change color, font, font size, notification settings
+* Add add user profile
+  - Remove friend feature 
 
 ***
 
