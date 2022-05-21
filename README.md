@@ -6,9 +6,9 @@ There are more screenshots and short gifs below.
 # Contents
 * [Motivation](#motivation)
 * [Architecture](#architecture)
+* [Showcase:sparkles:](#showcase)
 * [Challenges](#challenges)
 * [Road Ahead](#road-ahead)
-* [Showcase:sparkles:](#showcase)
 * [Resources]($resources)
 
 
@@ -51,7 +51,46 @@ H -.-> |Child| J[NewFriendVCCoordinator]
 J --> K{{NewFriendViewController}}
 ```
 
+***
 
+# Showcase 
+
+This is the first UIViewController. It contains two children UIViewControllers, one for signing up, one for signing in. The animated background is made using UIBezierPath and CGPath animation. The CGPath follows a SIN wave function, which varies per each floating bubble. For each child UIViewController, I attach a CAGradientLayer to create a shimmering effect. The background of each sign in/up form is a UIVisualEffectView that has a blurred transparent effect.
+
+![](https://media.giphy.com/media/8PGkKJXAArQ2tdmbKU/giphy.gif)
+
+---
+
+Following Protocol Oriented Programming design, both of these two UIViewControllers are able to use the same UIVIewControllerAnimatedTransitioning object. The loading circle and checkmark are done using CAShapeLayer, UIBezierPath and CGPath and animated by CABasicAnimation. This was really fun to learn.
+
+![Sign Up Animation](https://media.giphy.com/media/WNoMcT8ziHGPUekaAe/giphy.gif)
+![Sign In Animation](https://media.giphy.com/media/tqWMO7W1I0Yjda8XOB/giphy.gif)
+
+***
+
+
+The main screen of this app shows a HomeViewController, which has two child UIViewControlllers, one showing the list of conversations and the other shows the user's profile when swipe right (inspired by Reddit). In the profile view, the user can tap the 'Friend Requests' button to navigate to the next UIViewController. The transitions here are achived by using UIViewControllerAnimatedTransitioning as well.
+
+![](https://media.giphy.com/media/7twlHgic0HvRHpQ2HZ/giphy.gif)
+
+***
+
+The user can search for other users in Cloud Firestore to send a friend request. I decided to mimic Material Design's button feel when the user send a request.
+
+![](https://media.giphy.com/media/EJ3lM2Y5oDyy4C4CQw/giphy.gif)
+
+***
+
+Inspired by iMessage's message reaction, I decided it would be an interesting challenge to mimic the functionality. When the user long presses a message, this begins the transition to the next UIViewController. 
+
+First, I use CoreGraphics to take a screenshot of the entire phone screen, including the NavigationBar, which is ommited when simply using 'snapShotView(afterScreenUpdates: Bool)'. After receiving the screenshot, I use CoreImage's gaussian blur filter so I can have a UIImage with blur effect without UIVisualEffectView overlay. This effect is done in a fraction of a second thanks to CoreGraphics. The final blurred UIimage is used as the background of the next UIViewController.
+
+Next, I calculate the point at which the Reaction Menu expands. This point varies for each message. I calculate this point again when the user taps on a reaction.
+
+![](https://media.giphy.com/media/LrUylkZxGbWvTqMC2Y/giphy.gif)
+![](https://media.giphy.com/media/jYtWZ4S8qmTmLQZWAp/giphy.gif)
+
+***
 
 # Challenges
 
@@ -69,13 +108,13 @@ J --> K{{NewFriendViewController}}
 - Coordinate system in general. 
 - "Why is the keyboard covering the UITextField? How am I supposed to see what I am typing?!"
 
+***
+
 # Road Ahead
 
 There are still many things within Apple's ecosystem that I still need to learn. However after this proejct, I am definitely going to start with CoreData, SwiftUI and CloudKit.
 
-# Showcase
-![](https://gfycat.com/shockedblaringarmyworm.gif)
-
+***
 
 # Resources
 
