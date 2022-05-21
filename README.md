@@ -33,7 +33,7 @@ Here's a quick flowchart illustrating the flow of this app. Each ViewController 
 
 ```mermaid
 graph TB
-A[AppDelegate] --> B[MainCoordiantor]
+A[SceneDelegate] --> B[MainCoordiantor]
 A --> AA[FirebaseCommunicator]
  
 AA---B
