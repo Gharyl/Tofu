@@ -153,6 +153,17 @@ SwiftUI, CoreData, CloudKit, and CoreML are on the list of things I want to do n
 
 ***
 
+# FAQ
+### *What is the meaning behind the name of your app, Tofu?*
+
+>I was already working on my app before I decided an appropriate name because I never want to release this as an official AppStore app. Then one day, I was having a Korean tofu soup for dinner when I decided that I will just simply name my first app "Tofu". 
+>
+>*Yes, the meaning behind my app is that fact that I like Korean tofu soup.*
+>
+>Thank you for reading this *engaging and interesting* FAQ section.
+
+***
+
 # Resources
 
 * [HackingWithSwift](https://www.hackingwithswift.com)
