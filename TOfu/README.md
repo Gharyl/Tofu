@@ -79,7 +79,9 @@ Following Protocol Oriented Programming design, both of these two UIViewControll
 ***
 
 
-The main screen of this app shows a HomeViewController, which has two child UIViewControlllers, one showing the list of conversations and the other shows the user's profile when swipe right (inspired by Reddit). In the profile view, the user can tap the 'Friend Requests' button to navigate to the next UIViewController. The transitions here are achived by using UIViewControllerAnimatedTransitioning as well.
+The main screen of this app shows a HomeViewController, which has two child UIViewControlllers, one showing the list of conversations and the other shows the user's profile when swipe right (inspired by Reddit). In the profile view, the user can tap the 'Friend Requests' button to navigate to the next UIViewController. The transitions here are achived by using UIViewControllerAnimatedTransitioning as well. 
+
+I am using PHPickerViewController to let users select a photo from Photo Gallery. PHPickerViewController does not need user's permission to access the image data from the Photo Gallery, though the user still need to grant permission for PHAsset data.
 
 ![](https://media.giphy.com/media/7twlHgic0HvRHpQ2HZ/giphy.gif)
 
