@@ -152,7 +152,7 @@ I had a lot of fun learning Swift. Coming from C++ and other older languages, I 
 
 >*This app will not be published to the AppStore and is only for my own personal learning purposes.*
 
-SwiftUI, CoreData, CloudKit, and CoreML are on the list of things I want to do next!
+Though this is a long way to go, I might dabble in Adobe After Effects to create my own custom animations and import into a Swift project using Lottie. But for my next step, SwiftUI, CoreData, CloudKit, and CoreML are on the list of things I want to do next!
 
 ***
 
