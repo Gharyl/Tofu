@@ -138,7 +138,7 @@ Things I want to improve or add:
   - Link preview 
 * Add notification
 * Allow user to change color, font, font size, notification settings
-* Add add user profile
+* Add Friend profile view
   - Remove friend feature 
 
 ***
