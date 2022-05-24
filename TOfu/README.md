@@ -140,8 +140,9 @@ Things I want to improve or add:
   - Link preview 
 * Add notification
 * Allow user to change color, font, font size, notification settings
-* Add Friend profile view
-  - Remove friend feature 
+* Add Friend Profile view
+  - "Remove Friend" feature 
+* Delete Chat feature
 
 ***
 
@@ -156,6 +157,7 @@ SwiftUI, CoreData, CloudKit, and CoreML are on the list of things I want to do n
 ***
 
 # FAQ
+
 ### *What is the meaning behind the name of your app, Tofu?*
 
 >I was already working on my app before I decided an appropriate name because I never want to release this as an official AppStore app. Then one day, I was having a Korean tofu soup for dinner when I decided that I will just simply name my first app "Tofu". 
