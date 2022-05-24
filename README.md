@@ -79,7 +79,9 @@ Following Protocol Oriented Programming design, both of these two UIViewControll
 ***
 
 
-The main screen of this app shows a HomeViewController, which has two child UIViewControlllers, one showing the list of conversations and the other shows the user's profile when swipe right (inspired by Reddit). In the profile view, the user can tap the 'Friend Requests' button to navigate to the next UIViewController. The transitions here are achived by using UIViewControllerAnimatedTransitioning as well.
+The main screen of this app shows a HomeViewController, which has two child UIViewControlllers, one showing the list of conversations and the other shows the user's profile when swipe right (inspired by Reddit). In the profile view, the user can tap the 'Friend Requests' button to navigate to the next UIViewController. The transitions here are achived by using UIViewControllerAnimatedTransitioning as well. 
+
+I am using PHPickerViewController to let users select a photo from Photo Gallery. PHPickerViewController does not need user's permission to access the image data from the Photo Gallery, though the user still need to grant permission for PHAsset data.
 
 ![](https://media.giphy.com/media/7twlHgic0HvRHpQ2HZ/giphy.gif)
 
@@ -138,8 +140,9 @@ Things I want to improve or add:
   - Link preview 
 * Add notification
 * Allow user to change color, font, font size, notification settings
-* Add Friend profile view
-  - Remove friend feature 
+* Add Friend Profile view
+  - "Remove Friend" feature 
+* Delete Chat feature
 
 ***
 
@@ -149,11 +152,12 @@ I had a lot of fun learning Swift. Coming from C++ and other older languages, I 
 
 >*This app will not be published to the AppStore and is only for my own personal learning purposes.*
 
-SwiftUI, CoreData, CloudKit, and CoreML are on the list of things I want to do next!
+Though this is a long way to go, I might dabble in Adobe After Effects to create my own custom animations and import into a Swift project using Lottie. But for my next step, SwiftUI, CoreData, CloudKit, and CoreML are on the list of things I want to do next!
 
 ***
 
 # FAQ
+
 ### *What is the meaning behind the name of your app, Tofu?*
 
 >I was already working on my app before I decided an appropriate name because I never want to release this as an official AppStore app. Then one day, I was having a Korean tofu soup for dinner when I decided that I will just simply name my first app "Tofu". 
