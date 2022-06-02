@@ -103,10 +103,18 @@ Inspired by iMessage's message reaction, I decided it would be an interesting ch
 
 First, I use CoreGraphics to take a screenshot of the entire phone screen, including the NavigationBar, which is ommited when simply using 'snapShotView(afterScreenUpdates: Bool)'. After receiving the screenshot, I use CoreImage's gaussian blur filter so I can have a UIImage with blur effect without UIVisualEffectView overlay. CIFilter also lets us specifies the blur radius, unlike UIVisualEffect which I find too blurry to use in this case.
 
-This effect is done in a fraction of a second thanks to CoreGraphics. The final blurred UIimage is used as the background of the next UIViewController. Next, I calculate the point at which the Reaction Menu expands. This point varies for each message. I calculate this point again when the user taps on a reaction.
+This effect is done in a fraction of a second thanks to CoreGraphics. The final blurred UIimage is used as the background of the next UIViewController. 
+
+This actual tricky part here is the keyboard and UITableView. They keyboard *always* gets dismissed by the system right before a transition, which messes with the 'contentOffset' of my UITableView. My solution was to record the contentOffset value, set the contentOffset for UITableView, manually dismiss the keyboard, then finally, take the transition. I do similar order operation when the user returns.
 
 ![](https://media.giphy.com/media/LrUylkZxGbWvTqMC2Y/giphy.gif)
+
+Next, I calculate the point at which the Reaction Menu expands. This point varies for each message. Notice the little trailing bubbles at the bottom of the Reaction Menu; that is the origin point of expansion.
+
 ![](https://media.giphy.com/media/jYtWZ4S8qmTmLQZWAp/giphy.gif)
+
+I calculate the point of compression when a user taps on a reaction icon. 
+
 ![](https://media.giphy.com/media/Ddtd67NP8nNJIa2q1x/giphy.gif)
 
 ***
