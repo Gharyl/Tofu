@@ -79,7 +79,7 @@ Following Protocol Oriented Programming design, both of these two UIViewControll
 ***
 
 
-The main screen of this app shows a HomeViewController, which has two child UIViewControlllers, one showing the list of conversations and the other shows the user's profile when swipe right (inspired by Reddit). In the profile view, the user can tap the 'Friend Requests' button to navigate to the next UIViewController. The transitions here are achived by using UIViewControllerAnimatedTransitioning as well. 
+The main screen of this app shows a HomeViewController, which has two child UIViewControlllers, one showing the list of conversations and the other shows the user's profile when swipe right (inspired by Reddit). In the profile view, the user can tap the 'Friend Requests' button to navigate to the next UIViewController. The transitions here are achieved by using UIViewControllerAnimatedTransitioning as well. 
 
 I am using PHPickerViewController to let users select a photo from Photo Gallery. PHPickerViewController does not need user's permission to access the image data from the Photo Gallery, though the user still need to grant permission for PHAsset data.
 
@@ -93,7 +93,7 @@ The user can search for other users in Cloud Firestore to send a friend request.
 
 ***
 
-I use UISearchTextField and UISearchToken that Apple finally exposed to UIKit in iOS13. When the user taps on a UITableCell, it creates a UISearchToken and add it to UISearchTextField (like iMessage). I also access these UISearchTokens to create a 'Chat' object and push it to Cloud Firestore.
+I use UISearchTextField and UISearchToken that Apple finally exposed to UIKit in iOS13. When the user taps on a UITableCell, it creates a UISearchToken and adds it to UISearchTextField (like iMessage). I also access these UISearchTokens to create a 'Chat' object and push it to Cloud Firestore.
 
 ![](https://media.giphy.com/media/YgQu2ZG9KMavtFrGiN/giphy.gif)
 
@@ -105,7 +105,7 @@ First, I use CoreGraphics to take a screenshot of the entire phone screen, inclu
 
 This effect is done in a fraction of a second thanks to CoreGraphics. The final blurred UIimage is used as the background of the next UIViewController. 
 
-This actual tricky part here is the keyboard and UITableView. They keyboard *always* gets dismissed by the system right before a transition, which messes with the 'contentOffset' of my UITableView. My solution was to record the contentOffset value, set the contentOffset for UITableView, manually dismiss the keyboard, then finally, take the transition. I do similar order operation when the user returns.
+The actual tricky part is the keyboard and UITableView. They keyboard *always* gets dismissed by the system right before a transition, which messes with the 'contentOffset' of my UITableView. My solution was to record the contentOffset value, set the contentOffset for UITableView, manually dismiss the keyboard, then finally, take the transition. I do similar order operation when the user returns.
 
 ![](https://media.giphy.com/media/LrUylkZxGbWvTqMC2Y/giphy.gif)
 
